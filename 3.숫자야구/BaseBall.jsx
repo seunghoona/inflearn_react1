@@ -36,9 +36,17 @@ class BaseBall extends Component {
         }
 
         if(value === answer.join('')){ //[1,3,5,7]
-            this.setState({
+           /* this.setState({
                 result:'홈런',
+                //이전의 값을 현재의 값으로 바꿀 때는 아래와같이 사용하지 말고
                 tries : [...tries, { try : value, result : '홈런'}],
+            })*/
+
+            this.setState((prevState)=>{
+                return {
+                    result:'홈런',
+                    tries : [...prevState.tries, { try : value, result : '홈런'}],
+                }
             })
             alert('게임을 다시시작합니다.')
             this.setState({
@@ -69,11 +77,13 @@ class BaseBall extends Component {
                         ball+=1;
                     }
                 }
-                this.setState({
-                    tries: [...tries,{try : value, result :`Strike ${strike} ,Ball ${ball}`}],
-                    value:''
-                });
 
+                this.setState((prevState)=>{
+                    return {
+                        tries: [...tries,{try : value, result :`Strike ${strike} ,Ball ${ball}`}],
+                        value:''
+                    }
+                })
             }
         }
         console.log(value)
