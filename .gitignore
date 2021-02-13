@@ -1,0 +1,4 @@
+# Project exclude paths
+/2.끝말잇기/dist/
+/2.끝말잇기/node_modules/
+/3.숫자야구/node_modules/
