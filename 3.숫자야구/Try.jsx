@@ -5,8 +5,8 @@ import React, {Component} from 'react';
 class Try extends Component {
     render() {
         return (
-           <li key={this.props.index + this.props.value.fruit}>
-               <b>{this.props.value.fruit}</b> - {this.props.index}
+           <li>
+               <b>{this.props.tryInfo.try}</b> - {this.props.tryInfo.result}
            </li>
         );
     }
