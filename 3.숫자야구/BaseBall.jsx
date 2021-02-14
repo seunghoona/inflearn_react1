@@ -1,8 +1,5 @@
 import Try from "./Try";
-
-const react = require("react");
-const reactDom = require("react-dom");
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
 function getNumbers(){
     const candiate = [1,2,3,4,5,6,7,8,9]
@@ -16,7 +13,7 @@ function getNumbers(){
 }
 
 
-class BaseBall extends Component {
+class BaseBall extends PureComponent {
     state = {
         result  : '',
         value   : '',
