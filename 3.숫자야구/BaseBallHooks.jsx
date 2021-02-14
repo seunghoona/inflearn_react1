@@ -1,7 +1,6 @@
 import Try from "./Try";
 
-import React, {useState} from 'react'
-import ReactDom from 'react-dom'
+import React, {useState,memo} from 'react'
 import TryHooks from "./TryHooks";
 
 
@@ -16,12 +15,13 @@ function getNumberHooks(){
     return arrayHook;
 }
 
-const BaseBallHooks = () =>{
+const BaseBallHooks = memo(() =>{
 
     const [result , setResult]    = useState('')
     const [value  , setValue]     = useState('')
     const [answer3, setAnswer3]   = useState(getNumberHooks())
     const [tries  , setTries]     = useState([])
+
 
     const onSubmitForm  = (e) =>{
         e.preventDefault()
@@ -95,5 +95,5 @@ const BaseBallHooks = () =>{
             </ul>
         </>
     );
-}
+})
 export default BaseBallHooks

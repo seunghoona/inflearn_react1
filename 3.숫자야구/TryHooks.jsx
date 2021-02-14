@@ -1,12 +1,12 @@
-const React = require('react')
-const ReactDom = require('react-dom')
+import React,{memo} from "react";
 
-const Try = ({tryInfo}) =>{
+
+const Try = memo(({tryInfo}) =>{
     return (
         <li>
             <b>{tryInfo.try}</b> - {tryInfo.result}
         </li>
     );
-}
+})
 
 export default Try
